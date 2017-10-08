@@ -1,0 +1,74 @@
+/*  General Styles */
+.render-target .navbar-default {
+	background-color: white;
+	margin-bottom: 0;
+}
+
+.render-target .sign-in-out {
+	margin-right: 1rem;
+}
+
+.render-target .panel-default>.panel-heading {
+	background-color: white;
+}
+
+.render-target .content {
+	padding-top: 40px;
+}
+
+.render-target header {
+	text-align: center;
+	padding: 2.5rem 0;
+}
+
+/* Store Page */
+.render-target .inventory header {
+	margin-bottom: 2.7rem;
+}
+
+.render-target .inventoryTab {
+	font-size: 1.8rem;
+}
+
+.render-target .items .panel {
+	width: 45%;
+	margin: 2.2rem;
+	padding: 0;
+}
+
+.render-target .items .panel-heading {
+	text-align: center;
+}
+
+.render-target #carpetItems, #juicetItems {
+	padding-top: .01rem;
+}
+
+.render-target .icon {
+  max-width: 150px;
+  margin: 1rem auto;
+  display: block;
+}
+
+.render-target .services section {
+  text-align: center;
+}
+
+.render-target .cartHeading {
+	text-align: center;
+}
+
+.render-target .cartItems {
+	padding-top: 2rem
+}
+
+.render-target .btn.btn-square {
+  border-radius: 0;
+}
+
+/* Customers Page*/
+
+.customer-data .panel-group {
+	width: 90%;
+	margin: 0 auto;
+}

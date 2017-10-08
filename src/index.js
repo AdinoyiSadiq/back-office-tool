@@ -1,15 +1,32 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { render } from 'react-dom';
+import { BrowserRouter, Match, Miss } from 'react-router';
 
-import App from './components/app';
-import reducers from './reducers';
+import Nav from './components/nav';
+import Store from './components/store';
+import Customers from './components/customers';
+import Orders from './components/orders';
+import Sales from './components/sales';
+import NotFound from './components/NotFound';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const Root = () => {
+	return (
+		<BrowserRouter>
+			<div>
+				<Match exactly pattern="/" component={Store} />
+				<Match exactly pattern="/customers" component={Customers} />
+				<Match exactly pattern="/orders" component={Orders} />
+				<Match exactly pattern="/sales" component={Sales} />
+				<Miss component={NotFound} />
+			</div>
+		</BrowserRouter>
+	)
+}
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+render(
+	<div>
+		<Nav/>
+		<Root/>
+	</div>
+	, document.querySelector('.render-target'));
+
