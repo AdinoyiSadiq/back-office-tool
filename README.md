@@ -7,7 +7,7 @@ A back office tool that helps ABC Corp track it's customer details, orders and s
 Checkout this repo, install dependencies, then start the gulp process with the following:
 
 ```
-> git clone https://github.com/AdinoyiSadiq/abc-corp-tool.git
+> git clone https://github.com/AdinoyiSadiq/back-office-tool.git
 > cd back-office-tool
 > npm install
 > npm start

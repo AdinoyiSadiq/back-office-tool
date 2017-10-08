@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A tool that tracks customer details, orders and sales.",
   "main": "index.js",
-  "repository": "https://github.com/AdinoyiSadiq/abc-corp-tool.git",
+  "repository": "https://github.com/AdinoyiSadiq/back-office-tool.git",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
