@@ -1,4 +1,5 @@
-import React from 'react'; 
+import React from 'react';
+import Item from './item';  
 
 class Inventory extends React.Component {
 	render() {
@@ -23,13 +24,17 @@ class Inventory extends React.Component {
 				<div className="tab-content items">
 					<div role="tabpanel" className="tab-pane active" id="carpets">
 						<div className="row" id="carpetItems">
-							<p>Carpet List</p>
+							{
+								Object.keys(this.props.carpets).map(key => <Item key={key} details={this.props.carpets[key]} />)
+							}
 						</div>
 					</div>
 
 					<div role="tabpanel" className="tab-pane" id="juice">
 						<div className="row" id="juicetItems">
-							<p>Juice List</p>
+							{
+								Object.keys(this.props.juice).map(key => <Item key={key} details={this.props.juice[key]} />)
+							}
 						</div>
 					</div>
 				</div>

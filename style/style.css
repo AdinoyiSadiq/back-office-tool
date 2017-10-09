@@ -22,49 +22,50 @@
 }
 
 /* Store Page */
-.render-target .inventory header {
+.inventory header {
 	margin-bottom: 2.7rem;
 }
 
-.render-target .inventoryTab {
+.inventoryTab {
 	font-size: 1.8rem;
 }
 
-.render-target .items .panel {
+.items .panel {
 	width: 45%;
-	margin: 2.2rem;
+	margin: 2.1rem;
 	padding: 0;
 }
 
-.render-target .items .panel-heading {
+.items .panel-heading {
 	text-align: center;
 }
 
-.render-target #carpetItems, #juicetItems {
+#carpetItems, #juicetItems {
 	padding-top: .01rem;
 }
 
-.render-target .icon {
+.icon {
   max-width: 150px;
   margin: 1rem auto;
   display: block;
 }
 
-.render-target .services section {
+.services section {
   text-align: center;
 }
 
-.render-target .cartHeading {
+.cartHeading {
 	text-align: center;
 }
 
-.render-target .cartItems {
+.cartItems {
 	padding-top: 2rem
 }
 
-.render-target .btn.btn-square {
+.btn.btn-square {
   border-radius: 0;
 }
+
 
 /* Customers Page*/
 

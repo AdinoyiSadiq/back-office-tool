@@ -8,25 +8,50 @@ import Customers from './components/customers';
 import Orders from './components/orders';
 import Sales from './components/sales';
 import NotFound from './components/NotFound';
+import sampleItems from './sample-items';
 
-const Root = () => {
-	return (
-		<BrowserRouter>
-			<div>
-				<Match exactly pattern="/" component={Store} />
-				<Match exactly pattern="/customers" component={Customers} />
-				<Match exactly pattern="/orders" component={Orders} />
-				<Match exactly pattern="/sales" component={Sales} />
-				<Miss component={NotFound} />
-			</div>
-		</BrowserRouter>
-	)
+class App extends React.Component {
+	constructor() {
+		super();
+		
+		this.state = {
+			carpets: {},
+			juice: {},
+			cart: {},
+			order: {},
+			sales: {},
+			customers: {}
+		};
+	}
+
+	componentDidMount() {
+		this.setState({
+			carpets: sampleItems.carpets,
+			juice: sampleItems.juice
+
+		});
+	}
+
+	render() {
+		return (
+			<BrowserRouter>
+				<div>
+					<Match exactly pattern="/" render={(props) => ( <Store carpets={this.state.carpets} juice={this.state.juice} />)} />
+					<Match exactly pattern="/customers" component={Customers} />
+					<Match exactly pattern="/orders" component={Orders} />
+					<Match exactly pattern="/sales" component={Sales} />
+					<Miss component={NotFound} />
+				</div>
+			</BrowserRouter>
+
+		)
+	}
 }
 
 render(
 	<div>
 		<Nav/>
-		<Root/>
+		<App/>
 	</div>
 	, document.querySelector('.render-target'));
 
