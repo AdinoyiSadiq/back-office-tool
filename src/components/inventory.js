@@ -25,7 +25,8 @@ class Inventory extends React.Component {
 					<div role="tabpanel" className="tab-pane active" id="carpets">
 						<div className="row" id="carpetItems">
 							{
-								Object.keys(this.props.carpets).map(key => <Item key={key} details={this.props.carpets[key]} />)
+								Object.keys(this.props.carpets)
+									  .map(key => <Item key={key} index={key} details={this.props.carpets[key]} addToCart={this.props.addToCart} />)
 							}
 						</div>
 					</div>
@@ -33,7 +34,8 @@ class Inventory extends React.Component {
 					<div role="tabpanel" className="tab-pane" id="juice">
 						<div className="row" id="juicetItems">
 							{
-								Object.keys(this.props.juice).map(key => <Item key={key} details={this.props.juice[key]} />)
+								Object.keys(this.props.juice)
+									  .map(key => <Item key={key} index={key} details={this.props.juice[key]} addToCart={this.props.addToCart} />)
 							}
 						</div>
 					</div>

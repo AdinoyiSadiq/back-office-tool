@@ -14,6 +14,8 @@ class App extends React.Component {
 	constructor() {
 		super();
 		
+		this.addToCart = this.addToCart.bind(this);
+
 		this.state = {
 			carpets: {},
 			juice: {},
@@ -32,18 +34,26 @@ class App extends React.Component {
 		});
 	}
 
+	addToCart(key) {
+		const cart = {...this.state.cart};
+		cart[key] = cart[key] + 1 || 1;
+		this.setState({ cart });
+	}
+
 	render() {
 		return (
 			<BrowserRouter>
 				<div>
-					<Match exactly pattern="/" render={(props) => ( <Store carpets={this.state.carpets} juice={this.state.juice} />)} />
+					<Match exactly pattern="/" render={(props) => ( <Store carpets={this.state.carpets} 
+																		   juice={this.state.juice}
+																		   cart={this.state.cart} 
+																		   addToCart={this.addToCart} />)} />
 					<Match exactly pattern="/customers" component={Customers} />
 					<Match exactly pattern="/orders" component={Orders} />
 					<Match exactly pattern="/sales" component={Sales} />
 					<Miss component={NotFound} />
 				</div>
 			</BrowserRouter>
-
 		)
 	}
 }

@@ -7,8 +7,14 @@ class Store extends React.Component {
 		return (
 			<div className="content container">
 				<div className="row">
-					<Inventory carpets={this.props.carpets} juice={this.props.juice} />
-					<Cart/>
+					<Inventory 
+						carpets={this.props.carpets} 
+						juice={this.props.juice} 
+						addToCart={this.props.addToCart}/>
+					<Cart 
+						carpets={this.props.carpets} 
+						juice={this.props.juice}
+						cart={this.props.cart}/>
 				</div>
 			</div>
 		);
