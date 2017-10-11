@@ -66,6 +66,13 @@
   border-radius: 0;
 }
 
+/* Checkout Form */
+.modal-title {
+	text-align: center;
+}
+.modal-header {
+	margin-bottom: 1rem;
+}
 
 /* Customers Page*/
 

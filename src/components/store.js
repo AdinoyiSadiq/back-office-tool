@@ -14,7 +14,10 @@ class Store extends React.Component {
 					<Cart 
 						carpets={this.props.carpets} 
 						juice={this.props.juice}
-						cart={this.props.cart}/>
+						cart={this.props.cart}
+						addToOrder={this.props.addToOrder}
+						removeFromCart={this.props.removeFromCart}
+						clearCart={this.props.clearCart}/>
 				</div>
 			</div>
 		);

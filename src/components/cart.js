@@ -1,6 +1,6 @@
 import React from 'react'; 
 import { formatPrice } from '../helpers';
-import CartItem from './cartitem'; 
+import CheckoutForm from './checkoutForm';
 
 class Cart extends React.Component {
 	constructor() {
@@ -12,15 +12,18 @@ class Cart extends React.Component {
 		const carpet = this.props.carpets[key];
 		const juice = this.props.juice[key];
 		const count = this.props.cart[key];
+		const removeButton = <button type="button" className="close" onClick={() => this.props.removeFromCart(key)} >&times;</button>
 
 		if(carpet) {
-			return <CartItem key={key} 
-							 details={carpet} 
-							 count={count} />
+			return (
+				<li key={key} className="list-group-item">
+					<strong>{count}</strong> { carpet.name } {removeButton}<span className="badge">&#8358; {formatPrice(count * carpet.price)}</span> 
+				</li>)
 		} else if (juice) {
-			return <CartItem key={key} 
-							 details={juice} 
-							 count={count} />
+			return (
+				<li key={key} className="list-group-item">
+					<strong>{count} {removeButton}</strong> { juice.name } <span className="badge">&#8358; {formatPrice(count * juice.price)}</span>
+				</li>)
 		} 
 	}
 
@@ -40,25 +43,30 @@ class Cart extends React.Component {
 			return prevTotal;
 		}, 0);
 		return (
-			<section className="col-md-3 cart">
-				<div className="cartHeading">
-					<header>CART</header>
-					<p>
-						<strong>Total: </strong> 
-						&#8358;{formatPrice(total)}
-					</p>
-					<button className="btn btn-primary btn-lg">
-						Checkout
-					</button>
-				</div>
-				<div className="row">
-					<section className="col-md-12 cartItems">
-						<ul className="list-group">
-							{cartIds.map(this.renderItem)}
-						</ul>
-					</section>
-				</div>
-			</section>
+			<div>
+				<section className="col-md-3 cart">
+					<div className="cartHeading">
+						<header>CART</header>
+						<p>
+							<strong>Total: </strong> 
+							&#8358;{formatPrice(total)}
+						</p>
+						<button className="btn btn-primary btn-lg" data-toggle="modal" data-target="#checkoutForm">
+							Checkout
+						</button>
+					</div>
+					<div className="row">
+						<section className="col-md-12 cartItems">
+							<ul className="list-group">
+								{cartIds.map(this.renderItem)}
+							</ul>
+						</section>
+					</div>
+				</section>
+				<CheckoutForm cart={this.props.cart} 
+							  addToOrder={this.props.addToOrder}
+							  clearCart={this.props.clearCart}/>
+			</div>
 		);
 	}
 }

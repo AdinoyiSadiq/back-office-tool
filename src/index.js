@@ -15,15 +15,21 @@ class App extends React.Component {
 		super();
 		
 		this.addToCart = this.addToCart.bind(this);
+		this.removeFromCart = this.removeFromCart.bind(this);
+		this.clearCart = this.clearCart.bind(this);
+		this.addToOrder = this.addToOrder.bind(this);
+
 
 		this.state = {
 			carpets: {},
 			juice: {},
 			cart: {},
-			order: {},
+			orders: {},
 			sales: {},
 			customers: {}
 		};
+
+		this.baseCardState = this.state.cart
 	}
 
 	componentDidMount() {
@@ -40,6 +46,24 @@ class App extends React.Component {
 		this.setState({ cart });
 	}
 
+	removeFromCart(key) {
+		const cart = {...this.state.cart};
+		delete cart[key];
+		this.setState({ cart });
+	}
+
+	clearCart() {
+		const baseCardState = {...this.baseCardState};
+		this.setState({ cart: baseCardState })
+	}
+
+	addToOrder(order){
+		const orders = {...this.state.orders};
+		const id = Date.now();
+		orders[`order-${id}`] = order;
+		this.setState({ orders });
+	}
+
 	render() {
 		return (
 			<BrowserRouter>
@@ -47,7 +71,10 @@ class App extends React.Component {
 					<Match exactly pattern="/" render={(props) => ( <Store carpets={this.state.carpets} 
 																		   juice={this.state.juice}
 																		   cart={this.state.cart} 
-																		   addToCart={this.addToCart} />)} />
+																		   addToCart={this.addToCart}
+																		   addToOrder={this.addToOrder} 
+																		   removeFromCart={this.removeFromCart} 
+																		   clearCart={this.clearCart}/>)} />
 					<Match exactly pattern="/customers" component={Customers} />
 					<Match exactly pattern="/orders" component={Orders} />
 					<Match exactly pattern="/sales" component={Sales} />
