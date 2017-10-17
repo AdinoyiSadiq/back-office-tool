@@ -1,7 +1,3 @@
-# ABC Corp Tool
-
-A back office tool that helps ABC Corp track it's customer details, orders and sales.
-
 ### Getting Started
 
 Checkout this repo, install dependencies, then start the gulp process with the following:
@@ -10,6 +6,10 @@ Checkout this repo, install dependencies, then start the gulp process with the f
 > git clone https://github.com/AdinoyiSadiq/back-office-tool.git
 > cd back-office-tool
 > npm install
+> python server.py
+```
+After 'python server.py', open another terminal window and type in:
+```
 > npm start
 ```
 
