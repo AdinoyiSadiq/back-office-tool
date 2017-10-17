@@ -4,16 +4,16 @@ import Item from './item';
 class Inventory extends React.Component {
 	render() {
 		return (
-			<section className="col-md-9 inventory">
+			<section className="col-lg-9 col-md-12 col-sm-12 inventory">
 				<header>INVENTORY</header>
 				<div className="row">
 					<ul className="nav nav-tabs" role="tablist">
-						<li role="presentation" className="col-md-6 active">
+						<li role="presentation" className="col-xs-6 active">
 							<a role="tab" data-toggle="tab" href="#carpets" className="inventoryTab">
 								Carpets
 							</a>
 						</li>
-						<li role="presentation" className="col-md-6">
+						<li role="presentation" className="col-xs-6">
 							<a role="tab" data-toggle="tab" href="#juice" className="inventoryTab">
 								Juice
 							</a>
