@@ -14,3 +14,5 @@ After 'python server.py', open another terminal window and type in:
 ```
 
 After 'npm start', open a browser and type in "localhost:8080"
+
+Username is Adinoyi and the password is 1234
