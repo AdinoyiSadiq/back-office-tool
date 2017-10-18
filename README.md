@@ -6,6 +6,8 @@ Checkout this repo, install dependencies, then start the gulp process with the f
 > git clone https://github.com/AdinoyiSadiq/back-office-tool.git
 > cd back-office-tool
 > npm install
+> sudo apt-get install sqlite3 libsqlite3-dev
+> sudo apt-get install python-tornado
 > python server.py
 ```
 After 'python server.py', open another terminal window and type in:
