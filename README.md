@@ -21,7 +21,9 @@ Username is Adinoyi and the password is 1234
 
 ### How it works
 
-The back-office-tool application uses two handlers for get and post requests using tornado.
+For the back-office-tool application, the front-end has been built using React and the back-end using python and a tornado server with SQLite providing a database for testing.
+
+The application uses two handlers for the get and post requests using tornado.
 These handlers are used to update the state on the client-side.
 
 The app simply modifies the state on the client side and sends the state to the back-end when changes are made.
